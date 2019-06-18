@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+.box {
+    width: 100%;
+    height: 100px;
+    background-color:rgb(218, 218, 218);
+}
+.boxinterno {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+.logo {
+    width: auto;
+    height: 40%;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.boxmenu {
+    width: auto;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+.boxmenu a {
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    margin: 0 10px;
+}
+.boxmenu a:hover {
+    background-color: rgb(168, 168, 168);
+}
+
+.mobilemenu {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .boxinterno {
+        width: 90%;
+    }
+    .boxmenu {
+        display: block;
+        width: 100%;
+        padding: 20px;
+        position: fixed;
+        top: 193px;
+        right: -100%;
+        background-color: rgb(255, 188, 64);
+        box-sizing: border-box;
+        transition: all 0.3s;
+    }
+    .boxmenu a {
+        width: 100%;
+        display: block;
+        margin: 10px;
+    }
+    .mobilemenu {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        color: rgb(73, 73, 73);
+        font-size: 40px;
+    }
+    .boxinterno:hover .boxmenu {
+        right: 0;
+    }
+}
