@@ -26,5 +26,21 @@
                 </i>
             </div>
         </div>
+        <script>
+        
+        const botao = document.querySelector(".material-icons");
+        
+        botao.addEventListener('click', function(){
+            
+            const menu = document.querySelector(".boxmenu");
+            
+            if( menu.classList.contains('active') ){
+                menu.classList.remove('active');
+            } else {
+                menu.classList.add('active');
+            }
+        })
+        
+        </script>
     </body>
 </html>

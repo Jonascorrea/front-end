@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Aguardando resultado...</h1>
+    <button class="btn">Sortear</button>
+
+    <script>
+       const nomes = ["Eleandro", "Francine", "Tiago", "Jonas", "Adir"];
+
+       const texto = document.querySelector('h1');
+       const botao = document.querySelector('.btn');
+
+       botao.addEventListener('click', function(){
+            const valorRandom = Math.random() * 5;
+            const TransformaParaInteiro = Math.floor( valorRandom );
+            texto.innerHTML = "O sorteado é: " + nomes[TransformaParaInteiro]; 
+       })
+       
+    </script>
+</body>
+</html>

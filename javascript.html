@@ -5,13 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <h1>Aguardando resultado...</h1>
+
     <script>
-        const nome = "Jonas";
-        const frutas = ["laranja", "banana", "uva"];
-        const x = "5";
-        const idade = 23;
-        const divisao = 2;
-        console.log(x==="5");
+       
+       const nomes = ["Eleandro", "Francine", "Tiago", "Jonas", "Adir"];
+       const valorRandom = Math.random() * 5;
+       const TransformaParaInteiro = Math.floor( valorRandom );
+       const capturaNome = prompt("Digite seu nome");
+       const saudacao = ("Olá ");
+       const notas = ["7", "0", "10", "4", "9"];
+       const resultadoGood = (", você passou!");
+       const resultadoBad = (", já era pra tu!");
+
+       const texto = document.querySelector('h1');
+       texto.innerHTML = nomes[TransformaParaInteiro];
+
+
+        //console.log("O ganhador é: " + nomes[TransformaParaInteiro]);
+        //document.write(saudacao + capturaNome);
+       // alert("Hello World!");
+
+       // if( notas[TransformaParaInteiro] >= "7") {
+       //      alert(saudacao + capturaNome + resultadoGood);
+       //  } else {alert(saudacao + capturaNome + resultadoBad);
+       //  }
+        
+        
     </script>
 </body>
 </html>

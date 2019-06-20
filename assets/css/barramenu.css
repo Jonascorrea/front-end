@@ -45,19 +45,28 @@
 }
 
 @media (max-width: 480px) {
+    .box {
+        height: 50px;
+    }
     .boxinterno {
-        width: 90%;
+        width: 60%;
+        height: 100%;
+    }
+    .boxinterno .logo {
+        width: 80px;
+        height: auto;
     }
     .boxmenu {
         display: block;
         width: 100%;
         padding: 20px;
         position: fixed;
-        top: 193px;
+        top: 50px;
         right: -100%;
         background-color: rgb(255, 188, 64);
         box-sizing: border-box;
         transition: all 0.3s;
+        transform: none;
     }
     .boxmenu a {
         width: 100%;
@@ -73,7 +82,7 @@
         color: rgb(73, 73, 73);
         font-size: 40px;
     }
-    .boxinterno:hover .boxmenu {
+    .boxmenu.active {
         right: 0;
     }
 }
