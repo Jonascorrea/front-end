@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+     <title>Modal</title>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+     rel="stylesheet">
+    <style>
+            * {
+                margin: 0;
+                border: 0;
+                padding: 0;
+            }
+
+            .modal {
+                width: 100%;
+                height: 100%;
+                background-image: url('https://i.ytimg.com/vi/iV9MZoitGnY/maxresdefault.jpg');
+                background-position: center;
+                background-size: cover;
+                background-color:rgba(0,0,0,0.7);
+                background-blend-mode: multiply;
+                position: fixed;
+            }
+            .modalcontent {
+               width: 400px;
+               background-color: white;
+               position: absolute;
+               left: 50%;
+               top: 50%;
+               padding: 20px;
+               border-radius: 15px;
+               transform: translate(-50%, -50%);
+            }
+            .material-icons {
+                font-size: 40px;
+                color: black;
+                right: 0px;
+                top: 0px;
+                position: absolute;
+            }
+            .titulo {
+                width: 100%;
+                font-size: 50px;
+                text-align: center;
+                color: coral;
+            
+            }
+            #ano {
+                width: 100%;
+                border: 2px solid forestgreen;
+                padding: 5px;
+                 margin: 10px 0
+            }
+            form {
+                text-align: center;
+            }
+            button {
+                padding: 12px 30px;
+                background-color: forestgreen;
+                color: #fff;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+            iframe {
+                position: fixed;
+            }
+    </style> 
+
+</head>
+<body>
+    <div class="modal">
+        <div class="modalcontent">
+            <div class="titulo">Lorem ipsum</div>
+            <i class="material-icons">close</i>
+            <form>
+                <select id="ano">
+                    <option value>Ano</option>
+                    <option value="1990">1990</option>
+                    <option value="2010">2010</option>
+                </select>
+                <button id="button">enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector('#button');
+        const video = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/iV9MZoitGnY?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        const body = document.querySelector('body');
+        const x = document.querySelector('.material-icons');
+        const modalcontent = document.querySelector('.modalcontent');
+
+        x.addEventListener('click', function(){
+            modalcontent.style.display = 'none';
+        })    
+
+        button.addEventListener('click', function(e){
+            e.preventDefault();
+
+            const ano = document.querySelector('#ano').value;
+            const dataDeHoje = new Date();
+
+            if( (dataDeHoje.getFullYear() - ano) >= 18) {
+                body.innerHTML = video;
+            }else {
+                alert('Você não tem envergadura moral para assistir ao CHAVES!');
+            }
+        })
+
+        const select = document.querySelector('#ano');
+        let html = '';
+
+        for(let i = 1900; i < 2019; i++){
+            html += '<option>'+ i +'</option>'
+        }
+        select.innerHTML = html;
+    
+    </script>
+</body>
+</html>
